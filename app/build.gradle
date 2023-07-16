@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.kotlin.ttnpdev.testadapterandobject'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.kotlin.ttnpdev.testadapterandobject"
+        minSdk 32
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {  /*  Resource Nesting Example (set resource of folder)  using the gradle build system */
+        main {
+            res.srcDirs = [
+                    'src/main/res',
+                    'src/main/res/custom-values',
+                    'src/main/res/layouts',
+                    'src/main/res/layouts/main',
+                    'src/main/res/layouts/items',
+                    'src/main/res/design' ,
+                    'src/main/res/layouts/multiply',
+                    'src/main/res/image'
+            ]
+        }
+    } /* sourceSets */
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

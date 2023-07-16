@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="project_name">Adapter and Kotlin Object</string>
+    <!--  for multiply activity   -->
+    <string name="title_table">Multiply Table</string>
+    <string name="hint_table">0</string>
+</resources>
